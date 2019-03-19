@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.fintechsn.huahuadai.mapper.system.SysUserDepartmentMapper">
+
+    <select id="listByDepartmentId" parameterType="String" resultType="com.fintechsn.huahuadai.model.api.dto.SysUserDepartmentDTO">
+        select sys_user.id as id,sys_user.username as username from sys_user,sys_user_department where sys_user.id = sys_user_department.uid and sys_user_department.departmentid = #{departmentId};
+    </select>
+
+</mapper>

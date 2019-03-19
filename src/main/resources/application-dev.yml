@@ -1,0 +1,37 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: huahuadai-api
+  datasource:
+    url: jdbc:mysql://rm-bp189umj9481k4lpafo.mysql.rds.aliyuncs.com:3306/huahuaka
+    username: suiniyong_test
+    password: 1QAZ2wsx
+    driver-class-name: com.mysql.jdbc.Driver
+  redis:
+    host: 47.99.220.182
+    port: 6379
+    password: suinihua
+    timeout: 1000
+    database: 0
+    pool:
+      max-active: 200
+      max-idle: 180
+      min-idle: 20
+      max-wait: 100
+#  data:
+#    mongodb:
+#      uri: mongodb://cmeizu:cmz123456@dds-bp1adaedbb75bd44-pub.mongodb.rds.aliyuncs.com:3717/user
+
+mybatis-plus:
+  mapper-locations: classpath:/mapper/*Mapper.xml
+
+aliyun:
+  oss:
+    bucket: suininghua
+    endpoint: oss-cn-hangzhou.aliyuncs.com
+    accesskey: LTAIMoiKKXdpzRDd
+    accessKeySecret: KDlzWf7giqeJdyPMNzRPlYra4mSkOH
+    imageUrl: https://suininghua.oss-cn-hangzhou.aliyuncs.com/
+    ossPath: images/

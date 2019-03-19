@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.fintechsn.huahuadai.mapper.api.EveryDayDataMapper">
+
+
+    <sql id="tableField">
+        id,
+        `type`,
+        num,
+        channel_id as channelId,
+        date_time as dateTime,
+        decrement_num as decrementNum,
+        create_time as createTime
+
+
+    </sql>
+
+    <insert id="addEveryDayData"  useGeneratedKeys="true" keyProperty="id" parameterType="com.fintechsn.huahuadai.model.api.EveryDayData">
+        <![CDATA[
+        insert into every_day_data(`type`,num,decrement_num,channel_id,date_time,create_time) values(#{type},1,1,#{channelId},#{dateTime},now())
+        ]]>
+    </insert>
+
+    <update id="updateEveryDayData" parameterType="com.fintechsn.huahuadai.model.api.EveryDayData">
+        UPDATE `every_day_data`
+        <set>
+            num=num+1,decrement_num=decrement_num+1
+        </set>
+        where id=#{id} and `type`=#{type}
+    </update>
+
+
+    <update id="updateEveryDayDataBydecrementNum" parameterType="com.fintechsn.huahuadai.model.api.EveryDayData">
+        UPDATE `every_day_data`
+        <set>
+            num=num+1
+        </set>
+        where id=#{id} and `type`=#{type}
+    </update>
+
+    <select id="getTodayEveryDayData" resultType="com.fintechsn.huahuadai.model.api.EveryDayData">
+        SELECT
+        <include refid="tableField"/>
+        FROM `every_day_data` t
+        <where>
+            DATE_FORMAT(t.date_time,'%Y-%m-%d')=DATE_FORMAT(now(),'%Y-%m-%d')
+            AND  `type`=#{param1} and channel_id=#{param2}
+        </where>
+    </select>
+
+    <select id="getTimeEveryDayData" parameterType="com.fintechsn.huahuadai.model.api.param.ChannelListStatisticeParam" resultType="com.alibaba.fastjson.JSONObject">
+        SELECT
+        if(sum(t.num) IS NULL,0,sum(t.num) ) as num,
+        if(sum(t.decrement_num) IS NULL,0,sum(t.decrement_num) ) as decrementNum
+        FROM `every_day_data` t
+        WHERE 1 = 1
+        <if test="null != type and type != ''">
+            AND t.type = #{type}
+        </if>
+        <if test="null != channelId and channelId != ''">
+            AND t.channel_id = #{channelId}
+        </if>
+        <!--<if test="startTime !=null and startTime !='' and endTime !=null and endTime !=''">-->
+        <!--AND t.date_time between #{startTime} and #{endTime}-->
+        <!--</if>-->
+        <if test="startTime !=null and startTime !='' and endTime !=null and endTime !=''">
+            AND t.create_time between #{startTime} and #{endTime}
+        </if>
+    </select>
+</mapper>

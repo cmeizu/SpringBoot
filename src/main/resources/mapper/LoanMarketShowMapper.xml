@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.fintechsn.huahuadai.mapper.api.LoanMarketShowMapper">
+    <sql id="mColumnsSql">
+        id AS id,
+        loan_market_weight AS loanMarketWeight,
+        loan_market_name AS loanMarketName,
+        link_person AS linkPerson,
+        link_phone AS linkPhone,
+        company AS company,
+        settlement_method AS settlementMethod,
+        settlement_price AS settlementPrice,
+        loan_market_logo AS loanMarketLogo,
+        loan_market_url AS loanMarketUrl,
+        principal_mark AS principalMark,
+        sub_head AS subHead,
+        rate AS rate,
+        limit_days AS limitDays,
+        audit_time AS auditTime,
+        introduce AS introduce,
+        quota AS quota,
+        is_enable AS isEnable,
+        create_by AS createBy,
+        create_date AS createDate,
+        update_by AS updateBy,
+        update_date AS updateDate,
+        remarks AS remarks,
+        del_flag AS delFlag
+    </sql>
+
+    <select id="selectByLoanMarketShow"  resultType="com.fintechsn.huahuadai.model.api.LoanMarketShow">
+        SELECT <include refid="mColumnsSql"/>
+        FROM `loan_market_show`
+        where is_enable='0' and del_flag = '0' order by loan_market_weight desc;
+    </select>
+
+    <select id="findAllLoanMarketShow" resultType="com.fintechsn.huahuadai.model.api.LoanMarketShow">
+        SELECT
+        <include refid="mColumnsSql"/>
+        FROM `loan_market_show`
+        where del_flag = '0'
+        order by loan_market_weight desc;
+    </select>
+
+    <update id="onByIdLoanMarketShow" parameterType="java.lang.Integer">
+        update `loan_market_show` set `is_enable` = '0'
+        where id = #{id}
+    </update>
+
+    <update id="offByIdLoanMarketShow" parameterType="java.lang.Integer">
+        update `loan_market_show` set is_enable = '1'
+        where id = #{id}
+    </update>
+
+    <select id="conditionSearch" parameterType="com.fintechsn.huahuadai.model.api.param.LoanMarketConditionParam" resultType="com.fintechsn.huahuadai.model.api.LoanMarketShow">
+        select
+        <include refid="mColumnsSql"/>
+        from `loan_market_show`
+        where 1=1
+        <if test="company != null and company != ''">
+            and company=#{company}
+        </if>
+        <if test="loanMarketName != null and loanMarketName != ''">
+            and loan_market_name=#{loanMarketName}
+        </if>
+        <if test="settlementMethod != null and settlementMethod != ''">
+            and settlement_method=#{settlementMethod}
+        </if>
+        <if test="isEnable != null and isEnable != ''">
+            and is_enable=#{isEnable}
+        </if>
+        and del_flag = '0'
+        order by loan_market_weight desc;
+    </select>
+</mapper>

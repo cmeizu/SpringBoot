@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.fintechsn.huahuadai.mapper.api.LoanMarketReqeustStatisMapper">
+
+    <sql id="mColumnsSql">
+        id AS id,
+        channel_id AS channelId,
+        page_view AS pageView,
+        uniq_ip_view AS uniqIpView,
+        create_by AS createBy,
+        create_date AS createDate,
+        update_by AS updateBy,
+        update_date AS updateDate,
+        remarks AS remarks,
+        del_flag AS delFlag
+    </sql>
+
+    <update id="updatePvByChannelId">
+        update `loan_market_reqeust_statis` set `page_view` = `page_view`+1
+        where `channel_id`=#{channelId};
+    </update>
+    <update id="updatePvUvByChannelId">
+        update `loan_market_reqeust_statis` set `page_view`=`page_view`+1 ,`uniq_ip_view` = `uniq_ip_view`+1
+        where `channel_id`=#{channelId};
+    </update>
+
+    <select id="selectByChannelId" parameterType="java.lang.Integer" resultType="com.fintechsn.huahuadai.model.api.LoanMarketReqeustStatis">
+        select <include refid="mColumnsSql"/>
+        from`loan_market_reqeust_statis`
+        where `channel_id`=#{channelId};
+    </select>
+
+    <select id="selectByList" resultType="com.fintechsn.huahuadai.model.api.LoanMarketReqeustStatis">
+        select <include refid="mColumnsSql"/>
+        from `loan_market_reqeust_statis`;
+    </select>
+</mapper>

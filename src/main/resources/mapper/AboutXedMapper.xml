@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.fintechsn.huahuadai.mapper.api.AboutXedMapper">
+
+    <resultMap type="com.fintechsn.huahuadai.model.api.AboutXed" id="mAboutXed" autoMapping="true">
+    </resultMap>
+    <sql id="mColumnsSql">
+        id AS id,
+        about_us AS aboutUs,
+        type AS type,
+        serve_phone AS servePhone,
+        wexin AS wexin
+    </sql>
+
+    <select id="selectCountAboutXed" parameterType="map" resultType="int">
+        SELECT COUNT(1) FROM about_xed WHERE
+        wexin = '1'
+    </select>
+
+</mapper>
