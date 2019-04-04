@@ -13,3 +13,11 @@ spring:
 mybatis-plus:
   mapper-locations: classpath:/mapper/*Mapper.xml
 
+aliyun:
+  oss:
+    bucket: readimage
+    endpoint: oss-cn-hangzhou.aliyuncs.com
+    accesskey: LTAI3A1G8bH8OdvW
+    accessKeySecret: NqE9gsYtBFgPy9om5qROgIsScTSL2s
+    imageUrl: http://readimage.oss-cn-hangzhou.aliyuncs.com/
+    ossPath: images/
