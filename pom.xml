@@ -247,26 +247,26 @@
             </snapshots>
             <id>public</id>
             <name>Public Repositories</name>
-            <url>http://47.99.215.13:8091/nexus/content/groups/public/</url>
+            <url>http://119.23.255.116/nexus/content/groups/public/</url>
         </repository>
     </repositories>
     <pluginRepositories>
         <pluginRepository>
             <id>public</id>
             <name>Public Repositories</name>
-            <url>http://47.99.215.13:8091/nexus/content/groups/public/</url>
+            <url>http://119.23.255.116/nexus/content/groups/public/</url>
         </pluginRepository>
     </pluginRepositories>
     <distributionManagement>
         <repository>
             <id>nexus</id>
             <name>releases</name>
-            <url>http://47.99.215.13:8091/repository/maven-public/</url>
+            <url>http://119.23.255.116/repository/maven-public/</url>
         </repository>
         <snapshotRepository>
             <id>nexus</id>
             <name>snapshots</name>
-            <url>http://47.99.215.13:8091/repository/maven-snapshots/</url>
+            <url>http://119.23.255.116/repository/maven-snapshots/</url>
         </snapshotRepository>
     </distributionManagement>
 
