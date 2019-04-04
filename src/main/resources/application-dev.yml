@@ -5,14 +5,14 @@ spring:
   application:
     name: huahuadai-api
   datasource:
-    url: jdbc:mysql://rm-bp189umj9481k4lpafo.mysql.rds.aliyuncs.com:3306/huahuaka
-    username: suiniyong_test
-    password: 1QAZ2wsx
+    url: jdbc:mysql://cmeizu.cn:3306/huahuadai
+    username: root
+    password: 123456
     driver-class-name: com.mysql.jdbc.Driver
   redis:
-    host: 47.99.220.182
+    host: 119.23.255.116
     port: 6379
-    password: suinihua
+    password: 123456
     timeout: 1000
     database: 0
     pool:
@@ -27,11 +27,3 @@ spring:
 mybatis-plus:
   mapper-locations: classpath:/mapper/*Mapper.xml
 
-aliyun:
-  oss:
-    bucket: suininghua
-    endpoint: oss-cn-hangzhou.aliyuncs.com
-    accesskey: LTAIMoiKKXdpzRDd
-    accessKeySecret: KDlzWf7giqeJdyPMNzRPlYra4mSkOH
-    imageUrl: https://suininghua.oss-cn-hangzhou.aliyuncs.com/
-    ossPath: images/
