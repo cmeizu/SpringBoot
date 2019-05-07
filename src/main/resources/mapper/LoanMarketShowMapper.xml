@@ -28,8 +28,9 @@
         del_flag AS delFlag
     </sql>
 
-    <select id="selectByLoanMarketShow"  resultType="com.fintechsn.huahuadai.model.api.LoanMarketShow">
-        SELECT <include refid="mColumnsSql"/>
+    <select id="selectByLoanMarketShow" resultType="com.fintechsn.huahuadai.model.api.LoanMarketShow">
+        SELECT
+        <include refid="mColumnsSql"/>
         FROM `loan_market_show`
         where is_enable='0' and del_flag = '0' order by loan_market_weight desc;
     </select>
@@ -52,7 +53,8 @@
         where id = #{id}
     </update>
 
-    <select id="conditionSearch" parameterType="com.fintechsn.huahuadai.model.api.param.LoanMarketConditionParam" resultType="com.fintechsn.huahuadai.model.api.LoanMarketShow">
+    <select id="conditionSearch" parameterType="com.fintechsn.huahuadai.model.api.param.LoanMarketConditionParam"
+            resultType="com.fintechsn.huahuadai.model.api.LoanMarketShow">
         select
         <include refid="mColumnsSql"/>
         from `loan_market_show`

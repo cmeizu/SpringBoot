@@ -8,6 +8,7 @@ import com.fintechsn.huahuadai.model.api.param.UserListParam;
 public interface UserService extends IService<User> {
     /**
      * 用户注册
+     *
      * @param userListParam
      * @return
      */
@@ -15,6 +16,7 @@ public interface UserService extends IService<User> {
 
     /**
      * 手机号登录
+     *
      * @param userListParam
      * @return
      */
@@ -22,6 +24,7 @@ public interface UserService extends IService<User> {
 
     /**
      * 用户登出
+     *
      * @param phone
      * @return
      */
@@ -29,6 +32,7 @@ public interface UserService extends IService<User> {
 
     /**
      * 获取验证码
+     *
      * @param phone
      * @return
      */

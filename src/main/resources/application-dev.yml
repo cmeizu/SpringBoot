@@ -5,7 +5,7 @@ spring:
   application:
     name: huahuadai-api
   datasource:
-    url: jdbc:mysql://cmeizu.cn:3306/huahuadai
+    url: jdbc:mysql://127.0.0.1:3306/huahuadai
     username: root
     password: 123456
     driver-class-name: com.mysql.jdbc.Driver

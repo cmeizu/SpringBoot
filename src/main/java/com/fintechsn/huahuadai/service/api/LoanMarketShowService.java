@@ -11,6 +11,7 @@ public interface LoanMarketShowService extends IService<LoanMarketShow> {
 
     /**
      * 贷超上下架
+     *
      * @param id
      * @return
      */
@@ -18,9 +19,11 @@ public interface LoanMarketShowService extends IService<LoanMarketShow> {
 
     /**
      * 所有贷超列表
+     *
      * @return
      */
     List<LoanMarketShow> findAllLoanMarketShow();
+
     /**
      * 按条件获取贷超列表
      */

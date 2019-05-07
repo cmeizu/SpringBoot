@@ -15,7 +15,8 @@
 
     </sql>
 
-    <insert id="addEveryDayData"  useGeneratedKeys="true" keyProperty="id" parameterType="com.fintechsn.huahuadai.model.api.EveryDayData">
+    <insert id="addEveryDayData" useGeneratedKeys="true" keyProperty="id"
+            parameterType="com.fintechsn.huahuadai.model.api.EveryDayData">
         <![CDATA[
         insert into every_day_data(`type`,num,decrement_num,channel_id,date_time,create_time) values(#{type},1,1,#{channelId},#{dateTime},now())
         ]]>
@@ -44,11 +45,12 @@
         FROM `every_day_data` t
         <where>
             DATE_FORMAT(t.date_time,'%Y-%m-%d')=DATE_FORMAT(now(),'%Y-%m-%d')
-            AND  `type`=#{param1} and channel_id=#{param2}
+            AND `type`=#{param1} and channel_id=#{param2}
         </where>
     </select>
 
-    <select id="getTimeEveryDayData" parameterType="com.fintechsn.huahuadai.model.api.param.ChannelListStatisticeParam" resultType="com.alibaba.fastjson.JSONObject">
+    <select id="getTimeEveryDayData" parameterType="com.fintechsn.huahuadai.model.api.param.ChannelListStatisticeParam"
+            resultType="com.alibaba.fastjson.JSONObject">
         SELECT
         if(sum(t.num) IS NULL,0,sum(t.num) ) as num,
         if(sum(t.decrement_num) IS NULL,0,sum(t.decrement_num) ) as decrementNum

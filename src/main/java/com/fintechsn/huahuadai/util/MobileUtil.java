@@ -7,13 +7,14 @@ import java.util.regex.Pattern;
 
 /**
  * Filename       MobileUtil.java
- *
+ * <p>
  * Description   验证手机号工具类
  * Copyright     Copyright (c) 2016-2022 All Rights Reserved.
  * Company       fintechzh.com Inc Inc.
- * @author      XXX
- * @date        2018/11/1 16:44
- * @version    1.0
+ *
+ * @author XXX
+ * @version 1.0
+ * @date 2018/11/1 16:44
  */
 public class MobileUtil {
 
@@ -24,7 +25,7 @@ public class MobileUtil {
      * @return 验证通过返回true
      */
     public static boolean isMobile(String mobile) {
-        if(StringUtils.isEmpty(mobile)) {
+        if (StringUtils.isEmpty(mobile)) {
             return false;
         }
         String regExp = "^[1][3,4,5,6,7,8,9][0-9]{9}$";

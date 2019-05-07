@@ -53,6 +53,7 @@ public class OSSUploader {
         log.info("<--oss uploadFile url:{} -->", url);
         return url;
     }
+
     /**
      * 文件上传
      *
@@ -117,7 +118,7 @@ public class OSSUploader {
             String line = reader.readLine();
             if (line != null) {
                 result += line;
-            }else {
+            } else {
                 break;
             }
         }

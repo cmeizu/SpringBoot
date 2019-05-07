@@ -3,8 +3,8 @@ package com.fintechsn.huahuadai.constant.enums;
 public enum ParamSettingEnum {
     //用户状态
     ENABLE(1, "可用"),
-    FORBID(2,"禁用"),
-    DELETE(3,"删除");
+    FORBID(2, "禁用"),
+    DELETE(3, "删除");
 
     private int code;
     private String name;

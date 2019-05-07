@@ -10,9 +10,9 @@ import java.util.List;
 import java.util.Map;
 
 /**
+ * @version : Ver 1.0
  * @AdminMapper
  * @管理员Mapper
- * @version : Ver 1.0
  */
 @Mapper
 @Repository
@@ -21,6 +21,7 @@ public interface AdminMapper extends BaseMapper<Admin> {
 
     /**
      * 根据角色id查询
+     *
      * @param roleId
      * @return
      */
@@ -28,6 +29,7 @@ public interface AdminMapper extends BaseMapper<Admin> {
 
     /**
      * 根据部门查询催收员
+     *
      * @param departmentId
      * @return
      */
@@ -35,6 +37,7 @@ public interface AdminMapper extends BaseMapper<Admin> {
 
     /**
      * 查询 管理员和部门信息
+     *
      * @param id
      * @return
      */

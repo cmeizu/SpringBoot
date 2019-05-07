@@ -49,7 +49,7 @@ public class ProductController {
             return ResponseResult.fail("传递参数有误");
         }
         boolean flag = ipRecordService.addIpRecord(productId, ip);
-        return ResponseResult.e(flag? ResponseCode.OK:ResponseCode.FAIL);
+        return ResponseResult.e(flag ? ResponseCode.OK : ResponseCode.FAIL);
     }
 
     @PostMapping("/homelist")

@@ -22,6 +22,7 @@ public class ChanneluvRequestRecordServiceImpl extends ServiceImpl<ChanneluvRequ
 
     /**
      * 渠道uv和pv统计
+     *
      * @param remoteIp
      * @return
      */
@@ -33,7 +34,7 @@ public class ChanneluvRequestRecordServiceImpl extends ServiceImpl<ChanneluvRequ
         qw.eq("login_name", loginName);
         Channel channel = channelService.getOne(qw);
         requestRecord.setRemoteIp(remoteIp);
-        log.info("渠道id为:"+channel.getId());
+        log.info("渠道id为:" + channel.getId());
         requestRecord.setChannelId(String.valueOf(channel.getId()));
         if (channel.getIsEnable().equals("1")) {
             requestRecord.setRemarks("下架");

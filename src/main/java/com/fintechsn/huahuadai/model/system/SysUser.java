@@ -32,9 +32,9 @@ public class SysUser implements Serializable {
     private Integer status;
     @TableField(exist = false)
     private List<SysRole> roles;
-    @JsonSerialize(using= DateJsonSerializer.class)
-    @JsonDeserialize(using= DateJsonDeserializer.class)
-    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss" )
+    @JsonSerialize(using = DateJsonSerializer.class)
+    @JsonDeserialize(using = DateJsonDeserializer.class)
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date createDate;
     @TableField(exist = false)
     private String departmentId;

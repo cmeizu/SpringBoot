@@ -34,7 +34,7 @@ public class ResponseResult<T> implements Serializable {
     private final long timestamps = System.currentTimeMillis();
 
     public synchronized static <T> ResponseResult<T> e(ResponseCode statusEnum) {
-        return e(statusEnum,null);
+        return e(statusEnum, null);
     }
 
     public synchronized static <T> ResponseResult<T> e(ResponseCode statusEnum, T data) {

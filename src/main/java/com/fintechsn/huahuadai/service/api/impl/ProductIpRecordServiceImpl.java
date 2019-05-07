@@ -16,6 +16,7 @@ public class ProductIpRecordServiceImpl extends ServiceImpl<ProductIpRecordMappe
 
     /**
      * 由ip来统计pv和uv
+     *
      * @param id
      * @param ip
      * @return

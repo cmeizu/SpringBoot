@@ -3,6 +3,7 @@ package com.fintechsn.huahuadai.model.api.vo;
 import lombok.Data;
 
 import java.util.List;
+
 @Data
 public class LoanMarketStatiscsListVO {
     /**
@@ -24,6 +25,7 @@ public class LoanMarketStatiscsListVO {
 
     /**
      * 贷超列表
+     *
      * @return
      */
     private List<LoanMarketStatiscsListVO> record;

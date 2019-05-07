@@ -30,8 +30,8 @@ public class ChannelServiceImpl extends ServiceImpl<ChannelMapper, Channel> impl
     @Override
     public IPage<Channel> list(ChannelListParam channelListParam) {
         QueryWrapper queryWrapper = new QueryWrapper();
-        queryWrapper.eq("del_flag","0");
-        IPage<Channel> channelList = page(new Page(channelListParam.getPage(), channelListParam.getPageSize()),queryWrapper);
+        queryWrapper.eq("del_flag", "0");
+        IPage<Channel> channelList = page(new Page(channelListParam.getPage(), channelListParam.getPageSize()), queryWrapper);
         return channelList;
     }
 

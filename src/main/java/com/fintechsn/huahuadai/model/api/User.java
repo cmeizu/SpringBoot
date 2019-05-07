@@ -55,9 +55,9 @@ public class User implements Serializable {
 
     /**
      * @备注:设备类型
-     *@字段:app char(10)
+     * @字段:app char(10)
      */
-    private  String app;
+    private String app;
     /**
      * @备注:版本号
      * @字段:version

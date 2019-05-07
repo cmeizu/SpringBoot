@@ -18,7 +18,7 @@ public interface ChannelService extends IService<Channel> {
 
     boolean add(ChannelAddParam channelAddParam);
 
-    boolean update(String id,ChannelAddParam channelAddParam);
+    boolean update(String id, ChannelAddParam channelAddParam);
 
     boolean delete(String id);
 

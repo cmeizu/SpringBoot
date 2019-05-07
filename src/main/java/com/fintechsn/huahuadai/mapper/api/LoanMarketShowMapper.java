@@ -12,6 +12,7 @@ import java.util.List;
 @Repository
 public interface LoanMarketShowMapper extends BaseMapper<LoanMarketShow> {
     List<LoanMarketShow> selectByLoanMarketShow();
+
     List<LoanMarketShow> findAllLoanMarketShow();
 
     void onByIdLoanMarketShow(Integer id);

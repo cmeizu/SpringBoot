@@ -101,7 +101,6 @@ public class ParamSettingAddParam {
     private java.util.Date uptDatetime = new java.util.Date();
 
     /**
-
      * @备注:状态
      * @字段:status INT(10)
      */

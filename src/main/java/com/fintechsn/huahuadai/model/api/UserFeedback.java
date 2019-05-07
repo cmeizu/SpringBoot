@@ -24,14 +24,12 @@ public class UserFeedback implements Serializable {
     private static final long serialVersionUID = 1L;
 
     /**
-     * 
      * id int(11)
      */
     @TableId(type = IdType.AUTO)
     private Integer id;
 
     /**
-     * 
      * user_id int(11)
      */
     private Integer userId;
@@ -44,7 +42,6 @@ public class UserFeedback implements Serializable {
 
 
     /**
-     * 
      * content MEDIUMTEXT(16777215)
      */
     private String content;
@@ -57,7 +54,6 @@ public class UserFeedback implements Serializable {
 
 
     /**
-     * 
      * gmt_datetime DATETIME(19)
      */
     @JsonSerialize(using = DateJsonSerializer.class)
@@ -67,7 +63,6 @@ public class UserFeedback implements Serializable {
 
 
     /**
-     * 
      * upt_datetime DATETIME(19)
      */
     @JsonSerialize(using = DateJsonSerializer.class)

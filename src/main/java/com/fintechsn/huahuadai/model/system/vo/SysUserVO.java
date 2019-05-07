@@ -24,9 +24,9 @@ public class SysUserVO {
     private Integer age;
     private Integer status;
     private List<SysRole> roles;
-    @JsonSerialize(using= DateJsonSerializer.class)
-    @JsonDeserialize(using= DateJsonDeserializer.class)
-    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss" )
+    @JsonSerialize(using = DateJsonSerializer.class)
+    @JsonDeserialize(using = DateJsonDeserializer.class)
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date createDate;
     private List<SysResource> resources;
 

@@ -24,14 +24,17 @@
         where `channel_id`=#{channelId};
     </update>
 
-    <select id="selectByChannelId" parameterType="java.lang.Integer" resultType="com.fintechsn.huahuadai.model.api.LoanMarketReqeustStatis">
-        select <include refid="mColumnsSql"/>
+    <select id="selectByChannelId" parameterType="java.lang.Integer"
+            resultType="com.fintechsn.huahuadai.model.api.LoanMarketReqeustStatis">
+        select
+        <include refid="mColumnsSql"/>
         from`loan_market_reqeust_statis`
         where `channel_id`=#{channelId};
     </select>
 
     <select id="selectByList" resultType="com.fintechsn.huahuadai.model.api.LoanMarketReqeustStatis">
-        select <include refid="mColumnsSql"/>
+        select
+        <include refid="mColumnsSql"/>
         from `loan_market_reqeust_statis`;
     </select>
 </mapper>

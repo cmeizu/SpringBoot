@@ -8,6 +8,7 @@ import java.util.List;
 public interface HomepageListService extends IService<HomepageList> {
     /**
      * 首页产品列表
+     *
      * @return
      */
     List<HomepageList> homelist();

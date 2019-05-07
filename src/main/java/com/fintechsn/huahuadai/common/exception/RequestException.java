@@ -32,14 +32,14 @@ public class RequestException extends RuntimeException implements Serializable {
         this.msg = statusEnum.msg;
     }
 
-    public synchronized static RequestException fail(String msg){
+    public synchronized static RequestException fail(String msg) {
         return RequestException.builder()
                 .status(ResponseCode.FAIL.code)
                 .msg(msg)
                 .build();
     }
 
-    public synchronized static RequestException fail(String msg,Exception e){
+    public synchronized static RequestException fail(String msg, Exception e) {
         return RequestException.builder()
                 .status(ResponseCode.FAIL.code)
                 .msg(msg)
@@ -47,15 +47,13 @@ public class RequestException extends RuntimeException implements Serializable {
                 .build();
     }
 
-    public synchronized static RequestException fail(Integer code,String msg,Exception e){
+    public synchronized static RequestException fail(Integer code, String msg, Exception e) {
         return RequestException.builder()
                 .status(code)
                 .msg(msg)
                 .e(e)
                 .build();
     }
-
-
 
 
 }

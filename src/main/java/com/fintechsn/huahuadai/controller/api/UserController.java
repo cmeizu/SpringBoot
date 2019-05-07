@@ -41,7 +41,7 @@ public class UserController {
     @PostMapping("/getPhoneCode/{phone}")
     @ApiOperation(value = "获取验证码")
 //    @ApiImplicitParam(paramType = "header", name = "Authorization", value = "身份认证Token")
-    public ResponseResult getPhoneCode(@PathVariable(value = "phone") String phone ) {
+    public ResponseResult getPhoneCode(@PathVariable(value = "phone") String phone) {
         return userService.getPhoneCode(phone);
     }
 

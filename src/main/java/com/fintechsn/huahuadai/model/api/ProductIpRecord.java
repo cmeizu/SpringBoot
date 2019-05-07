@@ -26,7 +26,7 @@ public class ProductIpRecord {
     private Integer id;
     /**
      * @备注:product_id
-     * @字段:product_id  int(11)
+     * @字段:product_id int(11)
      */
     private Integer productId;
 

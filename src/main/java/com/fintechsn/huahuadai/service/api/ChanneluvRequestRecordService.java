@@ -7,6 +7,7 @@ import com.fintechsn.huahuadai.model.api.ChanneluvRequestRecord;
 public interface ChanneluvRequestRecordService extends IService<ChanneluvRequestRecord> {
     /**
      * 渠道ip记录
+     *
      * @param loginName
      * @param remoteIp
      * @return

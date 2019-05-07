@@ -41,12 +41,13 @@ public class LoanMarketShowServiceImpl extends ServiceImpl<LoanMarketShowMapper,
         }
         return message;
     }
+
     @Override
     public List<LoanMarketShow> selectByLoanMarketShow() {
         List<LoanMarketShow> result = loanMarketShowMapper.selectByLoanMarketShow();
         List<LoanMarketShow> list = new ArrayList<LoanMarketShow>();
         for (LoanMarketShow key : result) {
-            if("1".equals(key.getIsEnable())){
+            if ("1".equals(key.getIsEnable())) {
                 log.info("链接不可用");
             }
             if ("0".equals(key.getIsEnable())) {

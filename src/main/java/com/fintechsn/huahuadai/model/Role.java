@@ -9,55 +9,54 @@ import com.baomidou.mybatisplus.annotation.TableName;
 import java.io.Serializable;
 
 /**
+ * @version : Ver 1.0
  * @Role
  * @角色(role)
- * @version : Ver 1.0
  */
 @TableName("role")
 public class Role implements Serializable {
-	@TableField(exist = false)
-	private static final long serialVersionUID = 1L;
+    @TableField(exist = false)
+    private static final long serialVersionUID = 1L;
 
-	/**
-	 * @备注:主键id
-	 * @字段:id BIGINT(19)
-	 */
-	@TableId(type = IdType.AUTO)
-	private Long id;
-
-
-	/**
-	 * @备注:角色名称
-	 * @字段:title VARCHAR(55)
-	 */
-	private String title;
+    /**
+     * @备注:主键id
+     * @字段:id BIGINT(19)
+     */
+    @TableId(type = IdType.AUTO)
+    private Long id;
 
 
-	public Role(){
-	}
-
-	public Role(
-		Long id
-	){
-		this.id = id;
-	}
+    /**
+     * @备注:角色名称
+     * @字段:title VARCHAR(55)
+     */
+    private String title;
 
 
+    public Role() {
+    }
 
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public Long getId() {
-		return this.id;
-	}
+    public Role(
+            Long id
+    ) {
+        this.id = id;
+    }
 
 
-	public void setTitle(String title) {
-		this.title = title;
-	}
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-	public String getTitle() {
-		return this.title;
-	}
+    public Long getId() {
+        return this.id;
+    }
+
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getTitle() {
+        return this.title;
+    }
 }

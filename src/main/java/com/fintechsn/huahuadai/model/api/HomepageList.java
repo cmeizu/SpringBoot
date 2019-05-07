@@ -78,7 +78,7 @@ public class HomepageList {
      */
     private String quota;
     /**
-     * @备注:is_enable(是否上架:0 上架,1 下架)
+     * @备注:is_enable(是否上架:0 上架, 1 下架)
      * @字段:is_enable char(1)
      */
     private String isEnable;

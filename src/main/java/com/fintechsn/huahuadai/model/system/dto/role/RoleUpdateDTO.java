@@ -15,7 +15,7 @@ public class RoleUpdateDTO {
 
     private String name;
 
-    @Size(min = 1,message = "请至少选择一个权限资源")
+    @Size(min = 1, message = "请至少选择一个权限资源")
     private List<SysResource> resources;
 
 }

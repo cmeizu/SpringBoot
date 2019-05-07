@@ -3,9 +3,9 @@ package com.fintechsn.huahuadai.constant.enums;
 public enum EveryDayDataEnum {
     //用户状态
     DEFAULT(0, "正常"),
-    APPLY_NUM(1,"已申请用户数"),
-    LENDING_NUM(2,"已放贷用户数量"),
-    REG_NUM(3,"注册用户数量");
+    APPLY_NUM(1, "已申请用户数"),
+    LENDING_NUM(2, "已放贷用户数量"),
+    REG_NUM(3, "注册用户数量");
 
     private int code;
     private String name;

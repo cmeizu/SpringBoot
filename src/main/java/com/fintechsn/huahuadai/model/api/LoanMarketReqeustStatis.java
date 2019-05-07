@@ -23,7 +23,7 @@ public class LoanMarketReqeustStatis {
     private Integer id;
     /**
      * @备注:channel_id
-     * @字段:channel_id  int(11)
+     * @字段:channel_id int(11)
      */
     private Integer channelId;
 

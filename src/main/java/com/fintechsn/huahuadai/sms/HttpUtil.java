@@ -28,7 +28,7 @@ import java.util.Map;
 
 public class HttpUtil {
     private static Logger log = LoggerFactory.getLogger(HttpUtil.class);
-    
+
     public static final int CONNECTION_TIMEOUT = 5000;
     public static final int SOCKETCOOECTION_TIMEOUT = 5000;
 
@@ -48,7 +48,7 @@ public class HttpUtil {
             return HttpClients.custom().setSSLSocketFactory(sslsf).build();
         } catch (Exception e) {
             log.error("error", e);
-        } 
+        }
         return HttpClients.createDefault();
     }
 
@@ -138,7 +138,7 @@ public class HttpUtil {
             }
 
             response.close();
-            
+
             if (response.getStatusLine().getStatusCode() != NORMAL) {
                 throw new Exception(responseText);
             }
@@ -146,7 +146,7 @@ public class HttpUtil {
         } catch (ClientProtocolException e) {
             log.error("error", e);
             throw new Exception(e);
-        } 
+        }
         return responseText;
     }
 }

@@ -9,15 +9,15 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 /**
+ * @version : Ver 1.0
  * @ChannelMapper
  * @Mapper
- * @version : Ver 1.0
  */
 @Mapper
 @Repository
 public interface ChannelMapper extends BaseMapper<Channel> {
 
-    List<Channel>  selectByCondition(Channel channel);
+    List<Channel> selectByCondition(Channel channel);
 
     int selectLoanUserCount(Long channelId);
 
